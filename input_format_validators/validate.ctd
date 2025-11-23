@@ -1,18 +1,45 @@
-# This is a sample input validator, written for the checktestdata validation
-# language (see:
+# This is an input validator for building inspection problem, written for the 
+# checktestdata validation language (see:
 # https://github.com/DOMjudge/checktestdata/blob/master/doc/format-spec.md).
 
-# Please refer to the comments in README.md for a description of the syntax it
-# is validating. Then, change it as you need.
+# First line: number of buildings
+INT(1,999,num_buildings) NEWLINE
 
-INT(1,100,n) NEWLINE
-REPI(j,n)
-    REGEX("[a-z]{1,20}",s[j]) SPACE
-    INT(-100,100) SPACE
-    FLOATP(-10,10,0,3) NEWLINE
+# Second line: sequence of building IDs to inspect
+INT(1,999,num_to_inspect) SPACE
+REPI(i,num_to_inspect-1)
+    INT(1,999,inspect_id[i]) SPACE
+END
+INT(1,999,inspect_id[num_to_inspect-1]) NEWLINE
+
+# Following lines: one for each building
+REPI(j,num_buildings)
+    INT(1,999,building_id[j]) SPACE
+    INT(0,998,num_connections[j]) SPACE
+    REPI(k,num_connections[j]-1)
+        INT(1,999,conn[j*999+k]) SPACE
+    END
+    IF(num_connections[j] > 0)
+        INT(1,999,conn[j*999+num_connections[j]-1]) NEWLINE
+    ELSE
+        NEWLINE
+    END
 END
 
-# verify uniqueness among all strings
-ASSERT(UNIQUE(s))
+# verify uniqueness among all building IDs
+ASSERT(UNIQUE(building_id))
+
+# verify uniqueness among buildings to inspect
+ASSERT(UNIQUE(inspect_id))
+
+# verify uniqueness of connections for each building
+REPI(j,num_buildings)
+    REPI(k,num_connections[j])
+        REPI(m,k)
+            ASSERT(conn[j*999+k] != conn[j*999+m])
+        END
+    END
+END
 
 EOF
+

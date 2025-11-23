@@ -1,34 +1,70 @@
 #!/usr/bin/env python3
 
-# This is a sample input validator, written in Python 3.
-
-# Please refer to the comments in README.md for a description of the syntax it
-# is validating. Then, change it as you need.
+# This is an input validator for building inspection problem, written in Python 3.
 
 import sys
 import re
 
-n_line = sys.stdin.readline()
-print(repr(n_line)) # useful for debugging to see where we have read
-assert re.match('^[1-9][0-9]*\n$', n_line) # note: no leading zeros
-n = int(n_line)
-assert 1 <= n <= 100
+# First line: number of buildings
+num_buildings_line = sys.stdin.readline()
+print(repr(num_buildings_line))
+assert re.match('^[1-9][0-9]*\n$', num_buildings_line)
+num_buildings = int(num_buildings_line)
+assert 1 <= num_buildings < 1000
 
-unique_strings = set()
-for _ in range(n):
-    case_line = sys.stdin.readline()
-    print(repr(case_line)) # useful for debugging to see where we have read
-    # check the line syntax (string, integer, real)
-    assert re.match('^[a-z]{1,20} (0|-?[1-9][0-9]{0,2}) (0|-?[1-9][0-9]?)(\.[0-9]{1,3})?\n$', case_line)
+# Second line: sequence of building IDs to inspect
+inspect_line = sys.stdin.readline()
+print(repr(inspect_line))
+inspect_parts = inspect_line.strip().split()
+assert len(inspect_parts) > 0 and len(inspect_parts) < 1000
+inspect_ids = []
+for building_id in inspect_parts:
+    assert re.match('^[1-9][0-9]*$', building_id)
+    bid = int(building_id)
+    assert 1 <= bid < 1000
+    inspect_ids.append(bid)
 
-    # parse the line
-    s, i, f = case_line.split()
-    assert -100 <= int(i) <= 100
-    assert -10.0 <= float(f) <= 10.0
+# Verify uniqueness of building IDs to inspect
+assert len(inspect_ids) == len(set(inspect_ids)), "Building IDs to inspect must be distinct"
 
-    # verify string uniqueness
-    assert s not in unique_strings
-    unique_strings.add(s)
+# Following lines: one for each building
+building_ids = set()
+for _ in range(num_buildings):
+    building_line = sys.stdin.readline()
+    print(repr(building_line))
+    parts = building_line.strip().split()
+    assert len(parts) >= 2, "Each building line must have at least ID and connection count"
+    
+    # Parse building ID
+    building_id = parts[0]
+    assert re.match('^[1-9][0-9]*$', building_id)
+    building_id_int = int(building_id)
+    assert 1 <= building_id_int < 1000
+    
+    # Verify building ID uniqueness
+    assert building_id_int not in building_ids, f"Duplicate building ID: {building_id_int}"
+    building_ids.add(building_id_int)
+    
+    # Parse number of connections
+    num_connections = int(parts[1])
+    assert 0 <= num_connections < 999
+    
+    # Verify we have the right number of connected building IDs
+    assert len(parts) == num_connections + 2, \
+        f"Building {building_id_int} claims {num_connections} connections but has {len(parts) - 2}"
+    
+    # Validate each connected building ID and verify uniqueness
+    connected_ids = set()
+    for i in range(2, len(parts)):
+        connected_id = parts[i]
+        assert re.match('^[1-9][0-9]*$', connected_id)
+        connected_id_int = int(connected_id)
+        assert 1 <= connected_id_int < 1000
+        
+        # Verify distinctness of connected building IDs
+        assert connected_id_int not in connected_ids, \
+            f"Duplicate connection {connected_id_int} for building {building_id_int}"
+        connected_ids.add(connected_id_int)
 
 # ensure no extra input
 assert sys.stdin.readline() == ''
