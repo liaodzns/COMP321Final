@@ -1,0 +1,515 @@
+{
+  "Python": {
+    "sample": [
+      {
+        "test": "test1",
+        "time_ms": 74.4034,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test2",
+        "time_ms": 72.07410000000003,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test3",
+        "time_ms": 77.20919999999998,
+        "correct": true,
+        "success": true
+      }
+    ],
+    "secret": [
+      {
+        "test": "test10",
+        "time_ms": 72.79869999999988,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test11",
+        "time_ms": 71.50140000000027,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test12",
+        "time_ms": 71.3210000000002,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test13",
+        "time_ms": 70.4792000000003,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test14",
+        "time_ms": 71.09060000000022,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test15",
+        "time_ms": 73.59749999999998,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test16",
+        "time_ms": 72.28409999999963,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test17",
+        "time_ms": 70.05600000000013,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test18",
+        "time_ms": 68.80549999999985,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test19",
+        "time_ms": 70.38140000000004,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test20",
+        "time_ms": 73.7874999999999,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test21",
+        "time_ms": 80.1031000000001,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test22",
+        "time_ms": 75.48970000000033,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test23",
+        "time_ms": 70.56029999999991,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test24",
+        "time_ms": 70.01729999999995,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test25",
+        "time_ms": 72.64809999999989,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test26",
+        "time_ms": 72.5848,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test4",
+        "time_ms": 75.27190000000017,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test5",
+        "time_ms": 80.4866999999998,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test6",
+        "time_ms": 77.47590000000004,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test7",
+        "time_ms": 74.40580000000008,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test8",
+        "time_ms": 71.4826999999998,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test9",
+        "time_ms": 72.76300000000013,
+        "correct": true,
+        "success": true
+      }
+    ],
+    "summary": {
+      "total": 26,
+      "passed": 26,
+      "failed": 0,
+      "total_time": 1903.0789000000007,
+      "avg_time": 73.19534230769233,
+      "min_time": 68.80549999999985,
+      "max_time": 80.4866999999998
+    }
+  },
+  "Java": {
+    "sample": [
+      {
+        "test": "test1",
+        "time_ms": 92.57809999999989,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test2",
+        "time_ms": 93.1415000000002,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test3",
+        "time_ms": 92.77449999999999,
+        "correct": true,
+        "success": true
+      }
+    ],
+    "secret": [
+      {
+        "test": "test10",
+        "time_ms": 97.88629999999986,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test11",
+        "time_ms": 103.95209999999989,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test12",
+        "time_ms": 121.30219999999969,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test13",
+        "time_ms": 96.95569999999964,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test14",
+        "time_ms": 93.49749999999979,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test15",
+        "time_ms": 95.53099999999937,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test16",
+        "time_ms": 123.2432999999995,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test17",
+        "time_ms": 95.18700000000013,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test18",
+        "time_ms": 93.16980000000008,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test19",
+        "time_ms": 96.28440000000005,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test20",
+        "time_ms": 95.05780000000019,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test21",
+        "time_ms": 94.93779999999941,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test22",
+        "time_ms": 92.17549999999974,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test23",
+        "time_ms": 111.06399999999982,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test24",
+        "time_ms": 94.47479999999953,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test25",
+        "time_ms": 80.38159999999993,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test26",
+        "time_ms": 111.33550000000002,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test4",
+        "time_ms": 93.21629999999992,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test5",
+        "time_ms": 122.9950000000004,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test6",
+        "time_ms": 94.18880000000041,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test7",
+        "time_ms": 95.6646999999995,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test8",
+        "time_ms": 94.77020000000013,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test9",
+        "time_ms": 92.39819999999987,
+        "correct": true,
+        "success": true
+      }
+    ],
+    "summary": {
+      "total": 26,
+      "passed": 26,
+      "failed": 0,
+      "total_time": 2568.163599999997,
+      "avg_time": 98.77552307692297,
+      "min_time": 80.38159999999993,
+      "max_time": 123.2432999999995
+    }
+  },
+  "C++": {
+    "sample": [
+      {
+        "test": "test1",
+        "time_ms": 32.99800000000008,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test2",
+        "time_ms": 8.260099999999326,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test3",
+        "time_ms": 8.019800000000465,
+        "correct": true,
+        "success": true
+      }
+    ],
+    "secret": [
+      {
+        "test": "test10",
+        "time_ms": 7.098000000000049,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test11",
+        "time_ms": 7.5075,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test12",
+        "time_ms": 7.50950000000028,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test13",
+        "time_ms": 7.171200000000155,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test14",
+        "time_ms": 8.68879999999983,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test15",
+        "time_ms": 7.899099999999493,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test16",
+        "time_ms": 7.656400000000119,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test17",
+        "time_ms": 7.359600000000022,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test18",
+        "time_ms": 7.579400000000014,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test19",
+        "time_ms": 7.446199999999514,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test20",
+        "time_ms": 7.0926000000000045,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test21",
+        "time_ms": 7.594199999999773,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test22",
+        "time_ms": 7.580400000000154,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test23",
+        "time_ms": 7.960500000000259,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test24",
+        "time_ms": 7.558799999999977,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test25",
+        "time_ms": 7.056900000000255,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test26",
+        "time_ms": 7.098000000000049,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test4",
+        "time_ms": 6.6926000000000485,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test5",
+        "time_ms": 6.881899999999774,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test6",
+        "time_ms": 8.24069999999999,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test7",
+        "time_ms": 7.501099999999816,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test8",
+        "time_ms": 7.90589999999991,
+        "correct": true,
+        "success": true
+      },
+      {
+        "test": "test9",
+        "time_ms": 7.400500000000143,
+        "correct": true,
+        "success": true
+      }
+    ],
+    "summary": {
+      "total": 26,
+      "passed": 26,
+      "failed": 0,
+      "total_time": 221.75769999999946,
+      "avg_time": 8.529142307692286,
+      "min_time": 6.6926000000000485,
+      "max_time": 32.99800000000008
+    }
+  }
+}
