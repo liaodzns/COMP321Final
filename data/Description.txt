@@ -8,7 +8,7 @@ test6: This test case is a normal random case. Checking that the program works c
 test7: This test case is a normal random case. Checking that the program works correctly under typical conditions.
 test8: This test case is a normal random case. Checking that the program works correctly under typical conditions.
 test9: This test case is a normal random case. Checking that the program works correctly under typical conditions.
-test10: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test10: This test case is a normal random case. Checking that the program works correctly under typical conditions but specifically where there's a small number of buildings.
 test11: This test case is a normal random case. Checking that the program works correctly under typical conditions.
 test12: This test case is a normal random case. Checking that the program works correctly under typical conditions.
 test13: This test case is a normal random case. Checking that the program works correctly under typical conditions.
