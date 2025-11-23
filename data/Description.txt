@@ -1,10 +1,27 @@
-Sample data will be taken from `./sample/'.  All pairs of matching
-(.in, .ans) files there will be used as sample data, in alphabetical
-order by file name.  This data will be displayed in the problem
-statement.
-
-Secret test data will be taken from `./secret/'. All pairs of matching
-(.in, .ans) files there will be used to test each
-submission. Optionally a text file (with filename extension .txt)
-describing the purpose of an input file may be present. For each .txt
-file there must be a matching (.in,.ans) pair.
+test1: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test2: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test3: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test3: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test4: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test5: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test6: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test7: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test8: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test9: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test10: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test11: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test12: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test13: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test14: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test15: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test16: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test17: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test18: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test19: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test20: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test21: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test22: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test23: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test24: This test case is a normal random case. Checking that the program works correctly under typical conditions.
+test25: This test case is a hand-crafted edge case in which every building connects with every other building. Meaning that there is only one connected component. Does the solution correctly identify one large component?
+test26: This test case is a hand-crafted edge case in which every building does not connect to any other. So if there are n buildings, there are n connected components. Does the solution correctly handle zero edges?
