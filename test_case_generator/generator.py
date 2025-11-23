@@ -2,7 +2,7 @@ import random
 import os
 import subprocess
 
-max_buildings = 1000         
+max_buildings = 500         
 
 def generate_test_case(filename, location):
     output_dir = os.path.join("data", location)
