@@ -15,29 +15,56 @@
 
 \begin{document}
 
-\problemname{Title of the Problem Here}
+\problemname{Sector Shuffle}
 
-% Example use of the \illustration command
-% \illustration{0.3}{filename.jpg}{Photo by \href{url_here}{link text here, e.g. author name}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
 
-Put the problem story here. Here are some common issues to keep in mind as you edit:
+At Tesla's new Manufacturing Plant, safety and quality are the pride of the company. Lately, however, upper management has been bombarded with reports of unsanitary workspaces. Shutting down production would cost billions to the company, so to avoid disaster, they’ve hired a new employee, Billy, whose job is to conduct daily inspections of specific buildings throughout the plant. 
 
-\begin{itemize}
-    \item Use \LaTeX{} math mode for (most) numbers. The few exceptions are for years (e.g., 2019) or whenever a number is part of a string token.
-    \item For numbers $1\,000$ or larger, use thousands separator \verb|\,|. So, for example, one million would be $1\,000\,000$.
-    \item Write in active voice (i.e., avoid passive voice).
-    \item Write in present tense (avoid the word \texttt{will}, especially in the input description). For example, prefer: ``Input starts with an integer $n$ followed by $n$ lines...'' rather than ``Input \emph{will} start with an integer $n$, then \emph{will} come $n$ lines...''.
-\end{itemize}
+On his first day, Billy discovers that the plant layout is unusual. Some buildings are connected by two-way walkable paths, forming clusters called sectors. Within a sector, he can reach any building on foot. To move between sectors he must drive, and every sector is reachable from any other sector by road.
+
+Billy receives a list of buildings to inspect today, but he has no information about which buildings belong to which sectors. Since his electric car has a short battery life, he wants to minimize the number of times he must drive between sectors. Help Billy determine the minimum number of drives required to inspect all the buildings on his list.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.6\textwidth]{photo_321.jpg}
+\caption{An example layout of the plant. There are three sectors, each connected by roads that Billy can drive on. Within each sector, all buildings are reachable on foot via connected paths. For example, buildings 1 and 3 aren’t directly connected but can be reached by walking through building 4.}
+\label{fig:plantlayout}
+\end{figure}
 
 \section*{Input}
+\noindent
+The input consists of buildings to inspect and a description of how buildings connect to each other. Each building is represented by an integer id number (0 $<$ id $<$ 1000).
 
-Put the input format (syntax) description here, including constraints on all input values. That includes number ranges, the maximum number of digits after the decimal point for real values, the character sets and length ranges for strings, etc. If possible, always give a count of the number of items that follow (test cases, e.g.) rather than delimiting with a token or EOF. The input format should be fairly precise, so that the reader knows exactly what to expect (it should usually be easy to write a program to read the input using line-oriented or token-oriented parsing).
+First line: An integer giving the number of buildings (0 $<$ buildings $<$ 1000).
+
+Second line: A sequence of n integers (0 $<$ n $<$ 1000) representing the id numbers of buildings to inspect.
+
+The following lines: One line for each building (in no particular order), consisting of a sequence of integers. First, an integer giving the id number of the building. Second, the number of (other) buildings that can be reached from this building. Third, a sequence of distinct street id numbers indicating which buildings can be reached from this building.
 
 \section*{Output}
 
-Describe the output. Kattis output judging is not sensitive to case changes or space changes (including line formatting and blank lines). Try to maintain this flexibility with your problem—do not be overly precise or prescriptive here in the output formatting description. However, if exact textual matching or floating-point precision is required, do specify the constraints (e.g., ``your answer should be correct within a relative or absolute error of $10^{-3}$'').
+One line containing a single integer: the minimum number of drives between sectors required for Billy to inspect all buildings on his list.
 
-\section*{Sample Input 1	Sample Output 1}
-Please provide at least one sample Input and Output for your problem.
+\section*{Sample Input 1 \hfill Sample Output 1}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\begin{verbatim}
+5
+1 3 5
+1 1 4
+2 1 5
+3 1 4
+4 2 1 3
+5 1 2
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+\begin{verbatim}
+1
+\end{verbatim}
+\end{minipage}
 
 \end{document}
