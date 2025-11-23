@@ -47,7 +47,7 @@ def edge_case_only_one_sector(filename, location):
     output_dir = os.path.join("data", location)
     os.makedirs(output_dir, exist_ok=True)
 
-    n = random.randint(3, max_buildings) 
+    n = random.randint(3, 50) 
     buildings = list(range(1, n+1))
     
     inspect_count = random.randint(1, n)
