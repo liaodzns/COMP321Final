@@ -97,3 +97,8 @@ def main() -> None:
             for other in to_inspect:
                 if reachable[b][other]:
                     comp_id[other] = cid
+
+    print(sectors)
+
+if __name__ == "__main__":
+    main()
