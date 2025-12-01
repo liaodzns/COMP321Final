@@ -98,7 +98,8 @@ def main() -> None:
                 if reachable[b][other]:
                     comp_id[other] = cid
 
-    print(sectors)
+    drives = sectors - 1 if sectors > 0 else 0
+    print(drives)
 
 if __name__ == "__main__":
     main()
