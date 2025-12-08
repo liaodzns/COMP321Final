@@ -22,14 +22,14 @@
 
 At Tesla's new Manufacturing Plant, safety and quality are the pride of the company. Lately, however, upper management has been bombarded with reports of unsanitary workspaces. Shutting down production would cost billions to the company, so to avoid disaster, they’ve hired a new employee, Billy, whose job is to conduct daily inspections of specific buildings throughout the plant. 
 
-On his first day, Billy discovers that the plant layout is unusual. Some buildings are connected by two-way walkable paths, forming clusters called sectors. Within a sector, he can reach any building on foot. To move between sectors he must drive, and every sector is reachable from any other sector by road.
+On his first day, Billy discovers that the plant layout is unusual. Some buildings are connected by bidirectional footpaths, forming clusters called sectors. Within a sector, he can reach any building on foot. To move between sectors he must drive, and every sector is reachable from any other sector by road.
 
 Billy receives a list of buildings to inspect today, but he has no information about which buildings belong to which sectors. Since his electric car has a short battery life, he wants to minimize the number of times he must drive between sectors. Help Billy determine the minimum number of drives required to inspect all the buildings on his list.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.6\textwidth]{photo_321.jpg}
-\caption{An example layout of the plant. There are three sectors, each connected by roads that Billy can drive on. Within each sector, all buildings are reachable on foot via connected paths. For example, buildings 1 and 3 aren’t directly connected but can be reached by walking through building 4.}
+\caption{An example layout of the plant. There are three sectors, each connected by roads that Billy can drive on. Within each sector, all buildings are reachable on foot via bidirectional footpaths. For example, buildings 1 and 3 aren't directly connected but can be reached by walking through building 4.}
 \label{fig:plantlayout}
 \end{figure}
 
@@ -41,7 +41,7 @@ First line: An integer giving the number of buildings (0 $<$ buildings $<$ 1000)
 
 Second line: A sequence of n integers (0 $<$ n $<$ 1000) representing the id numbers of buildings to inspect.
 
-The following lines: One line for each building (in no particular order), consisting of a sequence of integers. First, an integer giving the id number of the building. Second, the number of (other) buildings that can be reached from this building. Third, a sequence of distinct street id numbers indicating which buildings can be reached from this building.
+The following lines: One line for each building (in no particular order), consisting of a sequence of integers. First, an integer giving the id number of the building. Second, the number of (other) buildings that can be reached from this building via bidirectional footpaths. Third, a sequence of distinct building id numbers indicating which buildings are directly connected to this building by footpaths. Note that footpaths are bidirectional: if building A lists building B as a connection, then building B must also list building A.
 
 \section*{Output}
 
