@@ -187,7 +187,5 @@ def stress_test_dense_sparse(filename, location, num_buildings):
     with open(output_path, "w") as f:
         f.write(result.stdout.strip() + "\n")
 
-print("Generating stress test 27 (300 buildings with sparse IDs and dense connections)...")
 stress_test_dense_sparse("test27", "secret", 300)
-print("Generating stress test 28 (400 buildings with sparse IDs and dense connections)...")
 stress_test_dense_sparse("test28", "secret", 400)
