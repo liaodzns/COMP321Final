@@ -25,3 +25,5 @@ test23: This test case is a normal random case. Checking that the program works 
 test24: This test case is a normal random case. Checking that the program works correctly under typical conditions.
 test25: This test case is a hand-crafted edge case in which every building connects with every other building. Meaning that there is only one connected component. Does the solution correctly identify one large component?
 test26: This test case is a hand-crafted edge case in which every building does not connect to any other. So if there are n buildings, there are n connected components. Does the solution correctly handle zero edges?
+test27: This is a stress test with 300 buildings using sparse building IDs and dense connections. It is designed to trigger Time Limit Exceeded for O(max_id^3) algorithms like Floyd-Warshall. Is the solution efficient?
+test28: This is a stress test with 400 buildings using sparse building IDs and dense connections. It is designed to trigger Time Limit Exceeded for O(max_id^3) algorithms. Is the solution efficient?
