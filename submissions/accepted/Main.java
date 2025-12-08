@@ -48,7 +48,7 @@ public class Main {
             }
             if (line == null) break;
 
-            StringTokenizer st = new StringTokenizer(line);
+            st = new StringTokenizer(line);
             int id = Integer.parseInt(st.nextToken());
             int deg = Integer.parseInt(st.nextToken());
 
