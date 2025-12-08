@@ -17,11 +17,13 @@ def main() -> None:
 
     it = iter(lines)
 
-    # First line: number of buildings described
-    B = int(next(it).strip())
+    # First line: number of buildings and number to inspect
+    first_line = next(it).strip().split()
+    B = int(first_line[0])
+    num_to_inspect = int(first_line[1])
 
     # Second line: building IDs to inspect
-    inspect_line = next(it).strip() if B is not None else ""
+    inspect_line = next(it).strip()
     if inspect_line:
         to_inspect = list(map(int, inspect_line.split()))
     else:

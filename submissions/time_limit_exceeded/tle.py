@@ -17,8 +17,10 @@ def main() -> None:
 
     it = iter(data)
 
-    # Number of buildings
-    B = int(next(it).strip())
+    # First line: number of buildings and number to inspect
+    first_line = next(it).strip().split()
+    B = int(first_line[0])
+    num_to_inspect = int(first_line[1])
 
     # List of building IDs to inspect 
     inspect_line = next(it).strip()
