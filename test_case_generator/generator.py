@@ -92,6 +92,48 @@ def edge_case_all_sectors(filename, location):
         drives = max(len(to_inspect) - 1, 0)
         f.write(f"{drives}\n")
 
+def stress_test_sparse_ids(filename, location, num_buildings):
+    """Generate test case with sparse building IDs to trigger O(max_id^3) TLE"""
+    output_dir = os.path.join("data", location)
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Use sparse building IDs (high max_id)
+    buildings = random.sample(range(1, 1000), k=num_buildings)
+    buildings.sort()  # Sort for consistent ordering
+    
+    inspect_count = random.randint(1, min(num_buildings, 50))
+    to_inspect = random.sample(buildings, k=inspect_count)
+    
+    adjacency = {b: set() for b in buildings}
+    # Create some connections (but not too many)
+    for i in range(num_buildings):
+        for j in range(i+1, num_buildings):
+            if random.random() < 0.003:  # Sparse connections
+                adjacency[buildings[i]].add(buildings[j])
+                adjacency[buildings[j]].add(buildings[i])
+    
+    input_path = os.path.join(output_dir, filename + ".in")
+    with open(input_path, "w") as f:
+        f.write(f"{num_buildings} {inspect_count}\n")
+        f.write(" ".join(map(str, to_inspect)) + "\n")
+        for b in buildings:
+            adj_list = list(adjacency[b])
+            f.write(f"{b} {len(adj_list)} " + " ".join(map(str, adj_list)) + "\n")
+    
+    # Generate answer using accepted solution
+    solution_path = os.path.join("submissions", "accepted", "solution.py")
+    with open(input_path, "r") as infile:
+        result = subprocess.run(
+            ["py", solution_path],
+            stdin=infile,   
+            text=True,
+            capture_output=True
+        )
+    
+    output_path = os.path.join(output_dir, filename + ".ans")
+    with open(output_path, "w") as f:
+        f.write(result.stdout.strip() + "\n")
+
 for i in range(1, 4):
     generate_test_case(f"test{i}", "sample")
 
@@ -100,3 +142,50 @@ for i in range(4, 25):
 
 edge_case_only_one_sector("test25", "secret")
 edge_case_all_sectors("test26", "secret")
+
+# Stress tests with sparse IDs to trigger TLE
+# Use more buildings and ensure they're well-connected to defeat early-exit optimization
+def stress_test_dense_sparse(filename, location, num_buildings):
+    """Generate test case with sparse IDs AND dense connections to maximize TLE"""
+    output_dir = os.path.join("data", location)
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Use sparse building IDs with high max_id
+    buildings = random.sample(range(1, 1000), k=num_buildings)
+    buildings.sort()
+    
+    inspect_count = random.randint(10, min(num_buildings, 100))
+    to_inspect = random.sample(buildings, k=inspect_count)
+    
+    adjacency = {b: set() for b in buildings}
+    # Create MORE connections to defeat the early-exit optimization in Floyd-Warshall
+    for i in range(num_buildings):
+        for j in range(i+1, num_buildings):
+            if random.random() < 0.02:  # More connections = more work for Floyd-Warshall
+                adjacency[buildings[i]].add(buildings[j])
+                adjacency[buildings[j]].add(buildings[i])
+    
+    input_path = os.path.join(output_dir, filename + ".in")
+    with open(input_path, "w") as f:
+        f.write(f"{num_buildings} {inspect_count}\n")
+        f.write(" ".join(map(str, to_inspect)) + "\n")
+        for b in buildings:
+            adj_list = list(adjacency[b])
+            f.write(f"{b} {len(adj_list)} " + " ".join(map(str, adj_list)) + "\n")
+    
+    # Generate answer using accepted solution
+    solution_path = os.path.join("submissions", "accepted", "solution.py")
+    with open(input_path, "r") as infile:
+        result = subprocess.run(
+            ["py", solution_path],
+            stdin=infile,   
+            text=True,
+            capture_output=True
+        )
+    
+    output_path = os.path.join(output_dir, filename + ".ans")
+    with open(output_path, "w") as f:
+        f.write(result.stdout.strip() + "\n")
+
+stress_test_dense_sparse("test27", "secret", 300)
+stress_test_dense_sparse("test28", "secret", 400)
