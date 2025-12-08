@@ -14,19 +14,21 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        // First line: number of buildings described
+        // First line: number of buildings and number to inspect
         String line = br.readLine();
         if (line == null || line.trim().isEmpty()) {
             return;
         }
-        int B = Integer.parseInt(line.trim());
+        StringTokenizer st = new StringTokenizer(line.trim());
+        int B = Integer.parseInt(st.nextToken());
+        int numToInspect = Integer.parseInt(st.nextToken());
 
         // Second line: sequence of building IDs to inspect
         line = br.readLine();
         List<Integer> toInspect = new ArrayList<>();
         if (line != null && !line.trim().isEmpty()) {
-            StringTokenizer st = new StringTokenizer(line);
-            while (st.hasMoreTokens()) {
+            st = new StringTokenizer(line);
+            for (int i = 0; i < numToInspect; i++) {
                 toInspect.add(Integer.parseInt(st.nextToken()));
             }
         }
@@ -46,7 +48,7 @@ public class Main {
             }
             if (line == null) break;
 
-            StringTokenizer st = new StringTokenizer(line);
+            st = new StringTokenizer(line);
             int id = Integer.parseInt(st.nextToken());
             int deg = Integer.parseInt(st.nextToken());
 

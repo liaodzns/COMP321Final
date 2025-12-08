@@ -5,18 +5,23 @@
 import sys
 import re
 
-# First line: number of buildings
-num_buildings_line = sys.stdin.readline()
-print(repr(num_buildings_line))
-assert re.match('^[1-9][0-9]*\n$', num_buildings_line)
-num_buildings = int(num_buildings_line)
+# First line: number of buildings and number to inspect
+first_line = sys.stdin.readline()
+print(repr(first_line))
+assert re.match('^[1-9][0-9]* [1-9][0-9]*\n$', first_line)
+parts = first_line.strip().split()
+assert len(parts) == 2, "First line must have exactly two integers"
+num_buildings = int(parts[0])
+num_to_inspect = int(parts[1])
 assert 1 <= num_buildings < 1000
+assert 1 <= num_to_inspect < 1000
 
 # Second line: sequence of building IDs to inspect
 inspect_line = sys.stdin.readline()
 print(repr(inspect_line))
 inspect_parts = inspect_line.strip().split()
-assert len(inspect_parts) > 0 and len(inspect_parts) < 1000
+assert len(inspect_parts) == num_to_inspect, \
+    f"Expected {num_to_inspect} building IDs to inspect, but got {len(inspect_parts)}"
 inspect_ids = []
 for building_id in inspect_parts:
     assert re.match('^[1-9][0-9]*$', building_id)

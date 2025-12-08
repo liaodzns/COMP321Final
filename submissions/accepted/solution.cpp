@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <sstream>
+#include <string>
 using namespace std;
 
 /*
@@ -14,24 +18,17 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int B;  // number of buildings described
-    if (!(cin >> B)) {
+    int B, numToInspect;  // number of buildings and number to inspect
+    if (!(cin >> B >> numToInspect)) {
         return 0; // no input
     }
 
-    // Read the rest of the first line, then the entire second line
-    string dummy;
-    getline(cin, dummy);          // consume remainder of line with B
-    string inspectLine;
-    getline(cin, inspectLine);    // line with building IDs to inspect
-
+    // Read the building IDs to inspect
     vector<int> toInspect;
-    {
-        stringstream ss(inspectLine);
+    for (int i = 0; i < numToInspect; ++i) {
         int id;
-        while (ss >> id) {
-            toInspect.push_back(id);
-        }
+        cin >> id;
+        toInspect.push_back(id);
     }
 
     const int MAX_ID = 1000; // IDs are 0 < id < 1000

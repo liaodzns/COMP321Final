@@ -23,7 +23,7 @@ def generate_test_case(filename, location):
     
     input_path = os.path.join(output_dir, filename + ".in")
     with open(input_path, "w") as f:
-        f.write(f"{n}\n")
+        f.write(f"{n} {inspect_count}\n")
         f.write(" ".join(map(str, to_inspect)) + "\n")
         for b in buildings:
             adj_list = list(adjacency[b])
@@ -33,7 +33,7 @@ def generate_test_case(filename, location):
 
     with open(input_path, "r") as infile:
         result = subprocess.run(
-            ["python3", solution_path],
+            ["py", solution_path],
             stdin=infile,   
             text=True,
             capture_output=True
@@ -41,7 +41,7 @@ def generate_test_case(filename, location):
     
     output_path = os.path.join(output_dir, filename + ".ans")
     with open(output_path, "w") as f:
-        f.write(result.stdout.strip())
+        f.write(result.stdout.strip() + "\n")
 
 def edge_case_only_one_sector(filename, location):
     output_dir = os.path.join("data", location)
@@ -57,7 +57,7 @@ def edge_case_only_one_sector(filename, location):
 
     input_path = os.path.join(output_dir, filename + ".in")
     with open(input_path, "w") as f:
-        f.write(f"{n}\n")
+        f.write(f"{n} {inspect_count}\n")
         f.write(" ".join(map(str, to_inspect)) + "\n")
         for b in buildings:
             adj_list = list(adjacency[b])
@@ -81,7 +81,7 @@ def edge_case_all_sectors(filename, location):
 
     input_path = os.path.join(output_dir, filename + ".in")
     with open(input_path, "w") as f:
-        f.write(f"{n}\n")
+        f.write(f"{n} {inspect_count}\n")
         f.write(" ".join(map(str, to_inspect)) + "\n")
         for b in buildings:
             adj_list = list(adjacency[b])

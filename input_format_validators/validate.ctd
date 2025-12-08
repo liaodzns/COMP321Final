@@ -2,11 +2,10 @@
 # checktestdata validation language (see:
 # https://github.com/DOMjudge/checktestdata/blob/master/doc/format-spec.md).
 
-# First line: number of buildings
-INT(1,999,num_buildings) NEWLINE
+# First line: number of buildings and number to inspect
+INT(1,999,num_buildings) SPACE INT(1,999,num_to_inspect) NEWLINE
 
 # Second line: sequence of building IDs to inspect
-INT(1,999,num_to_inspect) SPACE
 REPI(i,num_to_inspect-1)
     INT(1,999,inspect_id[i]) SPACE
 END
